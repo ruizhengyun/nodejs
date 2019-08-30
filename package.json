@@ -1,0 +1,19 @@
+{
+  "name": "nodejs",
+  "version": "0.0.1",
+  "description": "nodejs 知识",
+  "main": "index.js",
+  "scripts": {
+    "gitbook:init": "gitbook init",
+    "gitbook:serve": "gitbook serve",
+    "gitbook:build": "gitbook build", 
+    "createDir": "mkdir ./notes/$npm_package_version && mkdir ./assets/$npm_package_version"
+  },
+  "keywords": [],
+  "author": "ruizhengyun <ruizhengyun@gmail.com> (https://github.com/ruizhengyun)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruizhengyun/nodejs/issues"
+  },
+  "homepage": "https://github.com/ruizhengyun/nodejs#readme"
+}
