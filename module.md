@@ -107,3 +107,8 @@ console.log('moduleB require moduleA =>', moduleA.name);
     // something
 });
 ```
+
+[本次代码 Github](https://github.com/ruizhengyun/nodejs-note/tree/master/notes/0.0.1)
+
+# 你可以...
+[上一篇：Node.js 这一次不再错过](https://juejin.im/post/5d668a43f265da03af19e4df)
