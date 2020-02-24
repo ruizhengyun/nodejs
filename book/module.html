@@ -1,0 +1,431 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Module 模块 · Nodejs 入门与进阶</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ruizhengyun <ruizhengyun@gmail.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="console.html" />
+    
+    
+    <link rel="prev" href="npm.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://ruizhengyun.cn/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="npm.html">
+            
+                <a href="npm.html">
+            
+                    
+                    npm 包管理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    Module 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="console.html">
+            
+                <a href="console.html">
+            
+                    
+                    Console 日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Module 模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;"><b>1. </b>&#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7CFB;&#x7EDF;&#x6A21;&#x5757;"><b>1.1. </b>&#x7CFB;&#x7EDF;&#x6A21;&#x5757;</a></li><li><span class="title-icon "></span><a href="#&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;"><b>1.2. </b>&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6587;&#x4EF6;&#x5F62;&#x5F0F;"><b>2. </b>&#x6587;&#x4EF6;&#x5F62;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x52A0;&#x8F7D;&#x673A;&#x5236;"><b>3. </b>&#x52A0;&#x8F7D;&#x673A;&#x5236;</a></li><ul><li><span class="title-icon "></span><a href="#&#x52A0;&#x8F7D;&#x6B65;&#x9AA4;"><b>3.1. </b>&#x52A0;&#x8F7D;&#x6B65;&#x9AA4;</a></li><li><span class="title-icon "></span><a href="#&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b>3.2. </b>&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;&#x7F13;&#x5B58;&#x95EE;&#x9898;"><b>3.3. </b>&#x5173;&#x4E8E;&#x7F13;&#x5B58;&#x95EE;&#x9898;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5BF9;&#x8C61;&#x5F15;&#x7528;"><b>4. </b>&#x5BF9;&#x8C61;&#x5F15;&#x7528;</a></li><li><span class="title-icon "></span><a href="#&#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x5F15;&#x7528;"><b>5. </b>&#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</a></li><li><span class="title-icon "></span><a href="#&#x4F60;&#x53EF;&#x4EE5;"><b>6. </b>&#x4F60;&#x53EF;&#x4EE5;...</a></li></ul></div><a href="#&#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x91C7;&#x7528;&#x4E86; Commonjs &#x89C4;&#x8303;&#xFF0C;&#x901A;&#x8FC7; <code>module.exports&#x3001;require</code> &#x6765;&#x5BFC;&#x51FA;&#x548C;&#x5BFC;&#x5165;&#x6A21;&#x5757;&#x3002;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x673A;&#x5236;&#x4E2D;&#xFF0C;&#x91C7;&#x7528;&#x4E86;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x7B56;&#x7565;&#x3002;&#x5C31;&#x662F;&#x8BF4;&#x5728;&#x7528;&#x5230;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x6A21;&#x5757;&#x624D;&#x4F1A;&#x88AB;&#x52A0;&#x8F7D;&#xFF0C;&#x7B49;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x540E;&#x4F1A;&#x653E;&#x5230; binding_cache &#x4E2D;&#x3002;</p>
+<h1 id="&#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;"><a name="&#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5206;&#x7C7B;&#xFF08;&#x6A21;&#x5757;&#x7C7B;&#x578B;&#xFF09;</h1>
+<h2 id="&#x7CFB;&#x7EDF;&#x6A21;&#x5757;"><a name="&#x7CFB;&#x7EDF;&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#&#x7CFB;&#x7EDF;&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7CFB;&#x7EDF;&#x6A21;&#x5757;</h2>
+<ul>
+<li>&#x6838;&#x5FC3;&#x6A21;&#x5757;&#xFF08;native &#x6A21;&#x5757;&#xFF09;&#xFF0C;<code>http&#x3001;buffer&#x3001;fs</code> &#x7B49;&#xFF0C;&#x5E95;&#x5C42;&#x8C03;&#x7528;&#x7684;&#x5185;&#x5EFA;&#x6A21;&#x5757; (C/C++)&#xFF1B;</li>
+<li>C/C++ &#x6A21;&#x5757;&#xFF08;built-in &#x5185;&#x5EFA;&#x6A21;&#x5757;&#xFF09;&#xFF0C;&#x4F9B; native &#x6A21;&#x5757;&#x8C03;&#x7528;&#xFF1B;</li>
+</ul>
+<h2 id="&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;"><a name="&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;</h2>
+<ul>
+<li>&#x7B2C;&#x4E09;&#x65B9;&#x7EF4;&#x62A4;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6BD4;&#x5982; <code>express&#x3001;koa&#x3001;moment.js</code> &#x7B49;&#xFF1B;</li>
+<li>&#x672C;&#x5730;&#x7EF4;&#x62A4;&#x7684;&#x6A21;&#x5757;&#xFF08;&#x4EE5;&#x8DEF;&#x5F84;&#x5F62;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x6A21;&#x5757;&#xFF09;&#x6BD4;&#x5982; <code>.</code>&#x3001;<code>..</code>&#x3001;<code>/</code> &#x5F00;&#x5934;&#x7684;;</li>
+</ul>
+<h1 id="&#x6587;&#x4EF6;&#x5F62;&#x5F0F;"><a name="&#x6587;&#x4EF6;&#x5F62;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x4EF6;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x6587;&#x4EF6;&#x5F62;&#x5F0F;</h1>
+<ul>
+<li>javaScript &#x6A21;&#x5757;&#xFF0C;<code>module.js</code>&#xFF1B;</li>
+<li>json &#x6A21;&#x5757;&#xFF0C;<code>module.json</code>&#xFF1B;</li>
+<li>C/C++ &#x6A21;&#x5757;&#xFF0C;&#x7F16;&#x8BD1;&#x540E;&#x6269;&#x5C55;&#x540D;&#x4E3A; .node&#xFF0C;<code>module.node</code>&#xFF1B;</li>
+</ul>
+<h1 id="&#x52A0;&#x8F7D;&#x673A;&#x5236;"><a name="&#x52A0;&#x8F7D;&#x673A;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x52A0;&#x8F7D;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x52A0;&#x8F7D;&#x673A;&#x5236;</h1>
+<h2 id="&#x52A0;&#x8F7D;&#x6B65;&#x9AA4;"><a name="&#x52A0;&#x8F7D;&#x6B65;&#x9AA4;" class="anchor-navigation-ex-anchor" href="#&#x52A0;&#x8F7D;&#x6B65;&#x9AA4;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. &#x52A0;&#x8F7D;&#x6B65;&#x9AA4;</h2>
+<p>&#x7ECF;&#x5386; <code>&#x8DEF;&#x5F84;&#x5206;&#x6790;</code>&#x3001;<code>&#x6587;&#x4EF6;&#x5B9A;&#x4F4D;</code>&#x548C;<code>&#x7F16;&#x8BD1;&#x6267;&#x884C;</code>&#x3002;</p>
+<h2 id="&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. &#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h2>
+<ul>
+<li>&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x88AB;&#x6267;&#x884C;&#x540E;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x63D0;&#x9AD8;&#x518D;&#x6B21;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#xFF1B;</li>
+<li>&#x7CFB;&#x7EDF;&#x6A21;&#x5757;&#xFF0C;&#x5373;&#x539F;&#x751F;&#x6A21;&#x5757;&#xFF0C;&#x90E8;&#x5206;&#x6838;&#x5FC3;&#x6A21;&#x5757;&#x5DF2;&#x7ECF;&#x88AB;&#x7F16;&#x8BD1;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#xFF0C;&#x7701;&#x7565;&#x4E86; <code>&#x8DEF;&#x5F84;&#x5206;&#x6790;&#x3001;&#x6587;&#x4EF6;&#x5B9A;&#x4F4D;</code>&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x4E86;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5176;&#x4E2D;&#x7CFB;&#x7EDF;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#x5728;&#x6E90;&#x7801;&#x7684; lib &#x76EE;&#x5F55;&#x4E0B;&#xFF1B;</li>
+<li>&#x6587;&#x4EF6;&#x6A21;&#x5757;&#xFF0C;&#x4F18;&#x5148;&#x52A0;&#x8F7D; <code>.&#x3001;..&#x3001;/</code> &#x5F00;&#x5934;&#x7684;&#xFF0C;&#x4F1A;&#x4F9D;&#x6B21;&#x6309;&#x7167; <code>.js&#x3001;.json&#x3001;.node</code> &#x8FDB;&#x884C;&#x6269;&#x5C55;&#x540D;&#x8865;&#x8DB3;&#x5C1D;&#x8BD5;&#xFF08;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x52A0;&#x4E0A;&#x6269;&#x5C55;&#x540D;&#xFF09;&#xFF0C;&#x6700;&#x597D;&#x8FD8;&#x662F;&#x52A0;&#x4E0A;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x540D;&#x3002;</li>
+<li>&#x76EE;&#x5F55;&#x6A21;&#x5757;&#xFF0C;&#x6587;&#x4EF6;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x4F46;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x540C;&#x6837;&#x7684;&#x76EE;&#x5F55;&#x540D;&#xFF0C;&#x5C31;&#x4F1A;&#x5C06;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x5F53;&#x4F5C;&#x4E00;&#x4E2A;<strong>&#x5305;</strong>&#x6765;&#x5904;&#x7406;&#x3002;&#x8FD9;&#x5757;&#x91C7;&#x7528;&#x4E86; Commonjs &#x89C4;&#x8303;&#xFF0C;&#x5728;&#x6587;&#x4EF6; <code>package.json</code> &#x4E2D;&#x67E5;&#x627E;&#xFF1B;</li>
+<li>node_module &#x6A21;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x6A21;&#x5757;&#x3001;&#x8DEF;&#x5F84;&#x6587;&#x4EF6;&#x6A21;&#x5757;&#x90FD;&#x627E;&#x4E0D;&#x5230;&#xFF0C;Node.js &#x4F1A;&#x4ECE;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x7684;&#x7236;&#x76EE;&#x5F55;&#x5F00;&#x59CB;&#x67E5;&#x627E;&#xFF0C;&#x76F4;&#x5230;&#x7CFB;&#x7EDF;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF1B;</li>
+</ul>
+<p><a href="assets/require.png" data-lightbox="07e6c770-f5e5-47ef-bf70-24f721a49510" data-title=""><img src="assets/require.png" alt=""></a></p>
+<h2 id="&#x5173;&#x4E8E;&#x7F13;&#x5B58;&#x95EE;&#x9898;"><a name="&#x5173;&#x4E8E;&#x7F13;&#x5B58;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;&#x7F13;&#x5B58;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3. &#x5173;&#x4E8E;&#x7F13;&#x5B58;&#x95EE;&#x9898;</h2>
+<p>&#x6A21;&#x5757;&#x7F13;&#x5B58;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>require.cache</code> &#x67E5;&#x770B;&#x5DF2;&#x7F13;&#x5B58;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x6A21;&#x5757;&#x6587;&#x4EF6; require.module.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+    name: <span class="hljs-string">&apos;pr&apos;</span>,
+    say(){ }
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x5F15;&#x7528;&#x6A21;&#x5757;&#x6587;&#x4EF6; require.cache.js</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./require.module&apos;</span>);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;require.cache ----- &apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">require</span>.cache);
+</code></pre>
+<p><a href="assets/require.cache.png" data-lightbox="7cd11020-c7fc-4ab8-b4ef-7ab2f11778c4" data-title=""><img src="assets/require.cache.png" alt=""></a></p>
+<h1 id="&#x5BF9;&#x8C61;&#x5F15;&#x7528;"><a name="&#x5BF9;&#x8C61;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5BF9;&#x8C61;&#x5F15;&#x7528;</h1>
+<p>1.exports &#x4E0E; module.exports &#x5173;&#x7CFB;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> exports =  <span class="hljs-built_in">module</span>.exports;
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x5C31;&#x4E0D;&#x80FD;&#x6539;&#x53D8; exports &#x7684;&#x6307;&#x5411;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-javascript">exports.info =  {
+    name: <span class="hljs-string">&apos;pr&apos;</span>,
+    age: <span class="hljs-number">30</span>
+}
+
+<span class="hljs-built_in">module</span>.exports = {
+    name: <span class="hljs-string">&apos;pr&apos;</span>,
+    age: <span class="hljs-number">30</span>
+}
+</code></pre>
+<h1 id="&#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x5F15;&#x7528;"><a name="&#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</h1>
+<p>&#x6A21;&#x5757; <code>moduleA.js</code> &#x548C; <code>moduleB.js</code> &#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x4E92;&#x76F8;&#x5F15;&#x7528;&#xFF0C;&#x4F1A;&#x600E;&#x6837;&#xFF1F;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// moduleA.js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6A21;&#x5757; moduleA&apos;</span>);
+exports.name = <span class="hljs-string">&apos;moduleA name&apos;</span>;
+
+age = <span class="hljs-number">27</span>;
+
+<span class="hljs-keyword">const</span> moduleB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./moduleB.js&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;moduleA require moduleB =&gt;&apos;</span>, moduleB.name);
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// moduleB.js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6A21;&#x5757; moduleB&apos;</span>);
+exports.name = <span class="hljs-string">&apos;moduleB name&apos;</span>;
+
+<span class="hljs-keyword">const</span> moduleA = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./moduleA.js&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;moduleB require moduleA =&gt;&apos;</span>, moduleA.name);
+</code></pre>
+<p><a href="assets/module.require.png" data-lightbox="2be8cece-890b-44c4-b430-1f08766ee5a5" data-title=""><img src="assets/module.require.png" alt=""></a></p>
+<ul>
+<li>&#x542F;&#x52A8;&#x6A21;&#x5757; <code>node moduleA.js</code>&#xFF0C;&#x4F1A;&#x6253;&#x5370; <code>&#x6A21;&#x5757; moduleA</code>&#xFF1B;</li>
+<li>&#x6A21;&#x5757; <code>moduleA.js</code> &#x4E2D;&#x52A0;&#x8F7D; <code>moduleB.js</code>&#xFF0C;&#x6253;&#x5370; <code>&#x6A21;&#x5757; moduleB</code>&#xFF1B;</li>
+<li>&#x6A21;&#x5757; <code>moduleB.js</code> &#x4E2D;&#x53C8;&#x52A0;&#x8F7D; <code>moduleA.js</code>&#xFF0C;&#x6B64;&#x65F6;&#x6A21;&#x5757; <code>moduleA.js</code> &#x8FD8;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x5B8C;&#xFF0C;&#x8FD4;&#x56DE;&#x6A21;&#x5757; <code>moduleA.js</code> &#x7684; <code>exports</code> &#x5BF9;&#x8C61;&#x7ED9;&#x5230;&#x6A21;&#x5757; <code>moduleB.js</code>&#xFF1B;</li>
+<li>&#x6A21;&#x5757; <code>moduleB.js</code> &#x52A0;&#x8F7D;&#x5B8C;&#x540E;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x4E2A; <code>moduleA.js</code> &#x4E2D;&#x6302;&#x8F7D;&#x4E86;&#x5168;&#x5C40;&#x7684;&#x53D8;&#x91CF; <code>age</code>&#xFF0C;&#x6240;&#x4EE5;&#x80FD;&#x6253;&#x5370;&#x51FA;&#x6765;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x6A21;&#x5757; <code>moduleB.js</code> &#x7684; <code>exports</code> &#x5BF9;&#x8C61;&#x7ED9;&#x5230;&#x6A21;&#x5757; <code>moduleA.js</code>&#xFF1B;</li>
+</ul>
+<p>&#x5F88;&#x6709;&#x610F;&#x601D;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x524D;&#xFF0C;&#x4F1A;&#x7528;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#x5668;&#x5C06;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x6BB5;&#x5C01;&#x88C5;&#x8D77;&#x6765;</p>
+<pre><code class="lang-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exports, require, module, __filename, __dirname</span>) </span>{
+    <span class="hljs-comment">// something</span>
+});
+</code></pre>
+<p><a href="https://github.com/ruizhengyun/nodejs-note/tree/master/notes/0.0.1" target="_blank">&#x672C;&#x6B21;&#x4EE3;&#x7801; Github</a></p>
+<h1 id="&#x4F60;&#x53EF;&#x4EE5;"><a name="&#x4F60;&#x53EF;&#x4EE5;" class="anchor-navigation-ex-anchor" href="#&#x4F60;&#x53EF;&#x4EE5;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x4F60;&#x53EF;&#x4EE5;...</h1>
+<p><a href="https://juejin.im/post/5d668a43f265da03af19e4df" target="_blank">&#x4E0A;&#x4E00;&#x7BC7;&#xFF1A;Node.js &#x8FD9;&#x4E00;&#x6B21;&#x4E0D;&#x518D;&#x9519;&#x8FC7;</a></p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="npm.html" class="navigation navigation-prev " aria-label="Previous page: npm 包管理工具">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="console.html" class="navigation navigation-next " aria-label="Next page: Console 日志模块">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Module 模块","level":"1.3","depth":1,"next":{"title":"Console 日志模块","level":"1.4","depth":1,"path":"console.md","ref":"console.md","articles":[]},"previous":{"title":"npm 包管理工具","level":"1.2","depth":1,"path":"npm.md","ref":"npm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","insert-logo","-lunr","-search","search-pro","github","chapter-fold","flexible-alerts","splitter","code","todo","emphasize","-sharing","sharing-plus","auto-scroll-table","custom-favicon","lightbox","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/ruizhengyun/nodejs-note"},"todo":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":"http://ruizhengyun.cn/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"custom-favicon":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"qq":true,"qzone":false,"weibo":false,"douban":false,"all":["qq","qzone","weibo","douban"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 66px; min-height: 66px","url":"http://ruizhengyun.cn/static/media/logo.3c2359bf.png"}},"theme":"default","author":"ruizhengyun <ruizhengyun@gmail.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nodejs 入门与进阶","language":"zh-hans","links":{"sidebar":{"我的博客":"http://ruizhengyun.cn/"}},"gitbook":"3.2.3","description":"Nodejs 入门与进阶知识梳理"},"file":{"path":"module.md","mtime":"2019-08-30T02:34:16.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-24T00:49:31.235Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
