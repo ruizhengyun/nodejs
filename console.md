@@ -173,7 +173,7 @@ logger.log('可写流，日志模块 Console 方法 log');
 logger.error('可写流，日志模块 Console 方法 error');
 ```
 
-[本次代码 Github](https://github.com/ruizhengyun/nodejs-note/tree/master/notes/0.0.2)
+[本次代码 Github](https://github.com/ruizhengyun/nodejs-note/tree/feature_0.0.2/notes/0.0.2)
 
 # 面试题
 - [面试之道之 Node.js 日志模块 console](https://juejin.im/post/5d6c6bbcf265da03bc129190)

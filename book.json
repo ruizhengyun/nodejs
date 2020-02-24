@@ -1,21 +1,21 @@
 {
-  "title": "nodejs-tutorial",
-  "description": "nodejs 知识",
+  "title": "Nodejs 入门与进阶",
+  "description": "Nodejs 入门与进阶知识梳理",
   "author": "ruizhengyun <ruizhengyun@gmail.com>",
   "language": "zh-hans",
   "gitbook": "3.2.3",
   "links": {
     "sidebar": {
-      "我的博客": "http://ruizhengyun.cn/blog"
+      "我的博客": "http://ruizhengyun.cn/"
     }
   },
   "plugins": [
+    "popup",
     "insert-logo",
     "-lunr",
     "-search",
     "search-pro",
     "github",
-    
     "chapter-fold",
     "flexible-alerts",
     "splitter",
@@ -30,12 +30,12 @@
     "anchor-navigation-ex"
   ],
   "pluginsConfig": {
-    "favicon": "http://ruizhengyun.cn/tutorial/nodejs/assets/favicon.ico",
+    "favicon": "http://ruizhengyun.cn/favicon.ico",
     "github": {
       "url": "https://github.com/ruizhengyun/nodejs-note"
     },
     "insert-logo": {
-      "url": "http://ruizhengyun.cn/tutorial/nodejs/assets/logo.png",
+      "url": "http://ruizhengyun.cn/static/media/logo.3c2359bf.png",
       "style": "background: none; max-height: 66px; min-height: 66px"
     },
     "sharing": {
@@ -43,12 +43,7 @@
       "qzone": false,
       "weibo": false,
       "douban": false,
-      "all": [
-        "qq",
-        "qzone",
-        "weibo",
-        "douban"
-      ]
+      "all": ["qq", "qzone", "weibo", "douban"]
     },
     "flexible-alerts": {
       "style": "callout",
@@ -59,8 +54,8 @@
       }
     },
     "anchor-navigation-ex": {
-      "associatedWithSummary":false,
-      "showLevel":true,
+      "associatedWithSummary": false,
+      "showLevel": true,
       "multipleH1": true,
       "mode": "float",
       "pageTop": {
